@@ -1,11 +1,21 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import NavBar from "../components/NavBar";
 import BrandLogoSlider from "../components/BrandLogoSlider";
 import Footer from "../components/Footer";
 import MobileMenu from "../components/MobileMenu";
 import PhotoGallery from "./components/PhotoGallery";
+
 class Projects extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false
+    };
+
+  }
   render() {
+
     return (
       <div>
         {/* Navigation bar */}
@@ -13,10 +23,10 @@ class Projects extends Component {
 
         {/* breadcrumb */}
         {/*====================  breadcrumb area ====================*/}
-        <div
+        {/* <div
           className="breadcrumb-area breadcrumb-bg"
           style={{
-            backgroundImage: `url(assets/img/backgrounds/funfact-bg.jpg)`
+            backgroundImage: `url(assets/Refinaries/Refinary1.jpeg)`
           }}
         >
           <div className="container">
@@ -37,7 +47,7 @@ class Projects extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/*====================  End of breadcrumb area  ====================*/}
 
         {/*====================  project details page content ====================*/}
@@ -49,13 +59,13 @@ class Projects extends Component {
                 <div className="col-12 section-space--bottom--40">
                   <div className="project-image">
                     <img
-                      src="assets/img/projects/project-details.jpg"
+                      src="assets/Refinaries/refinary2.jpeg"
                       className="img-fluid"
                       alt=""
                     />
                   </div>
                 </div>
-                <div className="col-lg-4 col-12 section-space--bottom--30">
+                {/* <div className="col-lg-4 col-12 section-space--bottom--30">
                   <div className="project-information">
                     <h3>Project Information</h3>
                     <ul>
@@ -85,46 +95,63 @@ class Projects extends Component {
                       </li>
                     </ul>
                   </div>
-                </div>
-                <div className="col-lg-8 col-12 section-space--bottom--30 pl-30 pl-sm-15 pl-xs-15">
+                </div> */}
+                <div className="col-lg-12 col-12 section-space--bottom--30 pl-30 pl-sm-15 pl-xs-15">
                   <div className="project-details">
-                    <h2>Mountain Tunnel</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Voluptatem veritatis quo et ullam, ducimus itaque earum
-                      dolorem? Consectetur, et, aut. A, corporis officia eius
-                      dicta explicabo saepe nesciunt, mollitia minima, atque
-                      maiores optio cum. Atque amet unde impedit voluptate
-                      cumque distinctio minima, aspernatur nemo! Expedita in,
-                      numquam blanditiis ullam rem!
+                    <h4 className='section-title' style={{ textAlign: 'center', marginBottom: '1px' }}>Refinery Services</h4>
+                    <p className="leading-9"> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Location:</span> Our gold refinery business is strategically located in 2nd Avenue, Parklands, Nairobi, Kenya, ensuring convenient access for our clients and secure transportation of precious metals.
+                      <span> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Licensed Operation:</span> We take pride in being a fully licensed and accredited gold refinery. </span>
+                      <span>Our commitment to compliance with industry regulations and ethical standards is unwavering, giving our clients confidence in the authenticity and legitimacy of our operations.</span>
+                      <span><span className="text-slate-100"> Our license number is XXX</span></span>
+                      <span> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Expert Qualified Staff:</span> Our refinery boasts a team of expertly qualified and experienced staff members.</span>
+                      <span> Our professionals bring a wealth of knowledge and expertise to ensure the precise and efficient processing of precious metals.</span>
+                      <span>  <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Processing Capacity:</span> Equipped with state-of-the-art technology, our refinery can process up to 250 kilograms of gold and 350 kilograms of silver, meeting the demands of both individual and industrial clients.</span>
+                      <span> Whether you have small or large quantities of precious metals, we have the capacity to handle your needs efficiently and effectively.</span>
+                      <span> At Aussiemint, we combine our commitment to excellence, licensed operations, expert staff, and impressive processing capabilities to provide our clients with top-tier gold and silver refining services.</span>
                     </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Modi cum fugit officia dolores eligendi, rem. Quibusdam
-                      quasi impedit perspiciatis iure maiores, eaque numquam
-                      doloremque, quo nam soluta itaque obcaecati tempore!.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Dolore ex, nam adipisci dolores laborum earum. Unde cum,
-                      ut nostrum nihil alias, laudantium molestiae, vitae quidem
-                      dolorem officiis ipsum. Aliquid nemo consequuntur
-                      cupiditate delectus sapiente doloribus dolorem, at
-                      suscipit, non laudantium mollitia magnam repellat atque
-                      quia! Aut, veniam, nam. Ex porro optio facilis nostrum,
-                      qui ipsa?
-                    </p>
+
+                    <h4 className='section-title' style={{ textAlign: 'center', marginBottom: '1px' }}>Refinery Statistics</h4>
+                    <p> Our longevity in the business speaks to our deep understanding of the nuances and intricacies of refining gold and silver, ensuring that our clients receive the highest quality service and results.
+                      <span> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Market Reputation:</span>Our market reputation is built on a foundation of integrity, precision, and customer satisfaction. </span>
+                      <span>We have consistently delivered on our promises, maintaining the highest ethical standards in our operations</span>
+                      <span>This commitment to quality has earned us the trust and respect of clients, leading to positive word-of-mouth referrals and enduring partnerships.</span>
+                      <span> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Network Coverage (Africa & the World):</span>As a global player in the precious metals refining industry, Aussiemint has established an extensive network that spans not only across Africa but also around the world. </span>
+                      <span>Our reach allows us to serve clients from various corners of the globe, facilitating secure and efficient transactions</span>
+                      <span>  <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>In Africa: :</span> We have a strong presence in key African markets, leveraging our local expertise to cater to the unique needs of each region.</span>
+                      <span>This includes partnerships with mining operations, jewelers, and financial institutions, making us a preferred choice for businesses and individuals seeking reliable refining services in Africa.</span>
+                      <span> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Internationally:</span>: Our global network extends beyond Africa to encompass major international hubs. </span>
+                      <span>We collaborate with refineries, distributors, and traders worldwide, ensuring that our clients can access a broad spectrum of markets and opportunities.</span>
+                      <span>This international presence allows us to </span></p>
                   </div>
                 </div>
                 <div className="col-12">
                   <PhotoGallery />
                 </div>
+
               </div>
             </div>
           </div>
           {/*Projects section end*/}
         </div>
+        <div className="  col-lg-12" style={{ paddingTop: '20px', paddingBottom: '20px', display: 'flex', }} >
+          <div className="container center" style={{ display: "flex", gap: "20px" }}>
+            <div className="button center" style={{ width: '400px' }}>
+              <a
+                href={`${process.env.PUBLIC_URL}/contact-us`}
+                className="see-more-link"
+              >Schedule assay Report</a> </div>
+            <div className="button center" style={{ width: '400px' }}>
+              <a
+                href={`${process.env.PUBLIC_URL}/contact-us`}
+                className="see-more-link"
+              >
+                Get MOre Info
+              </a></div>
 
+          </div>
+        </div>
+
+       
         {/*====================  End of project details page content  ====================*/}
 
         {/* Brand logo */}

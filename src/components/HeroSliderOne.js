@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import SwiperSlider, { SwiperSlide } from "./swiper"
-import Image from './../assets/assets/slider1.jfif'
-import slider_2 from './../assets/assets/slider2.jfif'
-import Slider_3 from './../assets/assets/slider3.jpeg'
+
 class HeroSliderOne extends Component {
 
     render() {
@@ -17,9 +15,9 @@ class HeroSliderOne extends Component {
         }
 
         let data = [
-            { bgImg: 'slider2.jfif', sliderTitle: 'Build Your Dream With Passion', sliderSubtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm tempor incididunt ut labore et dolore.', btnLink: 'contact-us' },
-            { bgImg: 'slider2.jfif', sliderTitle: 'Build Your Dream With Passion', sliderSubtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm tempor incididunt ut labore et dolore.', btnLink: 'contact-us' },
-            { bgImg: "slider3.jpeg", sliderTitle: 'Build Your Dream With Passion', sliderSubtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm tempor incididunt ut labore et dolore.', btnLink: 'contact-us' }
+            { bgImg: 'Slider-img.jpg', sliderTitle: 'Established Mineral Network in Africa & Globally', sliderSubtitle: "", btnLink: 'refinery' },
+            { bgImg: 'Slider-img-2.jpg', sliderTitle: 'Well Equipped Assets with Competent Mineral Experts', sliderSubtitle: "", btnLink: 'refinery' },
+            { bgImg: "Slider-img-3.jpg", sliderTitle: 'Mineral Value Addition through Precise Results', sliderSubtitle: "", btnLink: 'refinery' }
         ];
 
         let DataList = data.map((val, i) => {
@@ -33,7 +31,7 @@ class HeroSliderOne extends Component {
                                         <div className="hero-slider__content">
                                             <h2 className="hero-slider__title">{val.sliderTitle}</h2>
                                             <p className="hero-slider__text">{val.sliderSubtitle}</p>
-                                            <a className="hero-slider__btn" href={`${process.env.PUBLIC_URL}/${val.btnLink}`}> GET START</a>
+                                            <a className="hero-slider__btn" href={`${process.env.PUBLIC_URL}/${val.btnLink}`}> GET STARTED NOW</a>
                                         </div>
                                     </div>
                                 </div>

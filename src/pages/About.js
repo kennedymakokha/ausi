@@ -8,6 +8,7 @@ import BrandLogoSlider from "../components/BrandLogoSlider";
 import Footer from "../components/Footer";
 import MobileMenu from "../components/MobileMenu";
 import ModalVideo from "react-modal-video";
+import Whatabout from "../components/WhatAbout";
 class About extends Component {
   constructor() {
     super();
@@ -29,7 +30,7 @@ class About extends Component {
 
         {/* breadcrumb */}
         {/*====================  breadcrumb area ====================*/}
-        <div
+        {/* <div
           className="breadcrumb-area breadcrumb-bg"
           style={{
             backgroundImage: `url(assets/img/backgrounds/funfact-bg.jpg)`
@@ -50,12 +51,17 @@ class About extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/*====================  End of breadcrumb area  ====================*/}
 
-        <div className="page-wrapper section-space--inner--top--120">
+        <div className="page-wrapper section-space--inner--top--100"
+          style={{ paddingTop: '50px', paddingBottom: '50px' }}
+        >
           {/*About section start*/}
           <div className="about-section section-space--inner--bottom--120">
+            <h1 style={{ textAlign: 'center', color: '', paddingTop: '50px', paddingBottom: '50px' }}>
+              ABOUT US
+            </h1>
             <div className="container">
               <div className="row row-25 align-items-center">
                 <div className="col-lg-6 col-12 mb-30">
@@ -65,7 +71,7 @@ class About extends Component {
                       <ModalVideo
                         channel="youtube"
                         isOpen={this.state.isOpen}
-                        videoId="OrS-93U4AYQ"
+                        videoId="2PHXJf6sxes"
                         onClose={() => this.setState({ isOpen: false })}
                       />
                       <button onClick={this.openModal}>
@@ -76,7 +82,7 @@ class About extends Component {
                 </div>
                 <div className="col-lg-6 col-12 mb-30">
                   <div className="about-content-two">
-                    <h3>Welcome to Aussiemint</h3>
+                    <h3 className="text-gold"> Welcome to Aussiemint</h3>
                     <h1>50 Years of Experience in Industry</h1>
                     {/* <h4>
                       We are ready to build your dream home Lorem ipsum dolor
@@ -92,7 +98,7 @@ class About extends Component {
                       The silver chloride precipitate is then filtered, cemented and transferred to silver refinery or recycled to smelting operation to produce silver Doré anodes for electrorefining where its pumped to the precipitation tank for precipitation of elementary gold.
                     </p>
                     <a
-                      href="services"
+                      href="refinery"
                       className="ht-btn--default ht-btn--default--dark-hover section-space--top--20"
                     >
                       Our Services
@@ -105,67 +111,19 @@ class About extends Component {
           {/*About section end*/}
 
           {/* Feature Icon */}
-          <FeatureIcon background="grey-bg" />
+          <Whatabout background="grey-bg" />
 
-          {/*About section start*/}
-          <div className="about-section section-space--inner--120">
-            <div className="container">
-              <div className="about-wrapper row">
-                <div className="col-sm-6 col-12 order-1 order-lg-2">
-                  <div className="about-image about-image-1">
-                    <img src="assets/img/about/about-1.jpg" alt="" />
-                  </div>
-                </div>
-                <div className="col-sm-6 col-12 order-2 order-lg-3">
-                  <div className="about-image about-image-2">
-                    <img src="assets/img/about/about-2.jpg" alt="" />
-                  </div>
-                </div>
-                <div className="col-lg-6 col-12 order-3 order-lg-1">
-                  <div className="about-content about-content-1">
-                    <h1>
-                      <span>50</span>Years of Experience
-                    </h1>
-                    <p>
-                      ligendi optio cumque nihil impedit quo minus id quod
-                      maxime placeat facere possimus, omnis voluptas assumenda
-                      est, omnis dolor ellendus. Temporibus autem quibusdam et
-                      aut officiis debitis aut rerum atibus saepe eveniet ut et
-                      voluptates repudiandae sint et molestiae
-                    </p>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-12 order-4">
-                  <div className="about-content about-content-2">
-                    <p>
-                      ligendi optio cumque nihil impedit quo minus id quod
-                      maxime placeat facere possimus, omnis voluptas assumenda
-                      est, omnis dolor ellendus. Temporibus autem quibusdam et
-                      aut officiis debitis aut rerum atibus saepe eveniet ut et
-                      voluptates repudiandae sint et molestiae non recusandae.
-                      Itaque earum rerum hic tenetur a sapie
-                    </p>
-                    <a
-                      href={`${process.env.PUBLIC_URL}/contact-us`}
-                      className="ht-btn--default ht-btn--default--dark-hover section-space--top--20"
-                    >
-                      Contact us
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div style={{ height: '100px', width: '100%' }}></div>
           {/*About section end*/}
 
           {/* Fun fact */}
           <Funfact />
 
           {/* Team member */}
-          <TeamMemberGrid />
+          {/* <TeamMemberGrid /> */}
 
           {/* Testimonial Slider */}
-          <TestimonialSlider />
+          {/* <TestimonialSlider /> */}
 
           {/* Brand logo */}
           <BrandLogoSlider background="" />

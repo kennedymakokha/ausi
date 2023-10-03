@@ -7,12 +7,11 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 const PhotoGallery = () => {
     const [index, setIndex] = useState(-1);
     const PROJECT_IMAGES = [
-        "assets/img/projects/project-9.jpg",
-        "assets/img/projects/project-10.jpg",
-        "assets/img/projects/project-11.jpg",
-        "assets/img/projects/project-12.jpg",
-        "assets/img/projects/project-10.jpg",
-        "assets/img/projects/project-11.jpg"
+        "assets/Refinaries/post-image-01.jpg",
+        "assets/Refinaries/post-image-02.jpg",
+        "assets/Refinaries/post-image-03.jpg",
+        "assets/Refinaries/post-image-04.jpg",
+      
     ];
     const slides = PROJECT_IMAGES.map((img, i) => ({
         src: img,

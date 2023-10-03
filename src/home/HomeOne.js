@@ -57,6 +57,17 @@ class HomeOne extends Component {
 
 
                 {/* Footer */}
+                <div className='subScribe_container' >
+                    <div className='container center' >
+                        <div>
+                            <h2 style={{ color: 'white' }}>
+
+                                Subscribe for <span className="text-gold">Newsletter</span> </h2>
+
+                        </div>
+                        <input type="text" className='textInput' />
+                    </div>
+                </div>
                 <Footer />
 
             </div>

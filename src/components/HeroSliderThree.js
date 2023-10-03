@@ -17,14 +17,14 @@ class HeroSliderThree extends Component{
         }
 
         let data = [
-            {bgImg: 'slider4.jpg', sliderTitle: 'Build Your Dream With Passion', sliderSubtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm tempor incididunt ut labore et dolore.', btnLink: 'contact-us'},
-            {bgImg: 'slider5.jpg', sliderTitle: 'Build Your Dream With Passion', sliderSubtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm tempor incididunt ut labore et dolore.', btnLink: 'contact-us'}
+            {bgImg: 'WhatsApp Image 2023-09-25 at 15.42.35.jpeg', sliderTitle: 'Build Your Dream With Passion', sliderSubtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm tempor incididunt ut labore et dolore.', btnLink: 'contact-us'},
+            {bgImg: 'WhatsApp Image 2023-09-25 at 15.42.36 (1).jpeg', sliderTitle: 'Build Your Dream With Passion', sliderSubtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm tempor incididunt ut labore et dolore.', btnLink: 'contact-us'}
         ];
 
         let DataList = data.map((val, i)=>{
             return(
                 <SwiperSlide key={i}>
-                    <div className="hero-slider__single-item" style={{ backgroundImage: `url(assets/img/slider/${val.bgImg})` }}>
+                    <div className="hero-slider__single-item" style={{ backgroundImage: `url(assets/assets/images/Assay/${val.bgImg})` }}>
                         <div className="hero-slider__content-wrapper">
                             <div className="container">
                             <div className="row">

@@ -11,7 +11,7 @@ class Contact extends Component {
 
         {/* breadcrumb */}
         {/*====================  breadcrumb area ====================*/}
-        <div
+        {/* <div
           className="breadcrumb-area breadcrumb-bg"
           style={{
             backgroundImage: `url(assets/img/backgrounds/funfact-bg.jpg)`
@@ -32,7 +32,7 @@ class Contact extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/*====================  End of breadcrumb area  ====================*/}
 
         {/*====================  content page content ====================*/}
@@ -45,7 +45,7 @@ class Contact extends Component {
                   <div className="contact-map">
                     <iframe
                       title="google-map"
-                      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d392436.93004030554!2d-105.13838587646829!3d39.7265847007123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1558429398879!5m2!1sen!2sbd"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.85168283229!2d36.81449517496565!3d-1.2612513987267424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f171bcc6114cd%3A0x3842565cf6238554!2sAmani%20Plaza!5e0!3m2!1ssw!2ske!4v1695290485464!5m2!1ssw!2ske"
                       allowFullScreen
                     ></iframe>
                   </div>
@@ -62,8 +62,7 @@ class Contact extends Component {
                         </span>
                         <span className="text">
                           <span>
-                            Stock Building, 125 Main Street 1st Lane, San
-                            Francisco, USA
+                            2nd Parklands Avenue
                           </span>
                         </span>
                       </li>
@@ -72,8 +71,8 @@ class Contact extends Component {
                           <i className="ion-ios-telephone-outline" />
                         </span>
                         <span className="text">
-                          <a href="tel:1234567890">(001) 24568 365 987</a>
-                          <a href="tel:1234567890">(001) 65897 569 784</a>
+                          <a href="tel:1234567890">(+254) 788 283 594</a>
+                          <a href="tel:1234567890">(+254) 788 283 594</a>
                         </span>
                       </li>
                       <li>
@@ -81,8 +80,8 @@ class Contact extends Component {
                           <i className="ion-ios-email-outline" />
                         </span>
                         <span className="text">
-                          <a href="mailto:info@example.com">info@example.com</a>
-                          <a href="mailto:info@example.com">info@example.com</a>
+                          <a href="mailto:info@aussiemint.com">info@aussiemint.com</a>
+                          <a href="mailto:info@aussiemint.com">info@aussiemint.com</a>
                         </span>
                       </li>
                     </ul>

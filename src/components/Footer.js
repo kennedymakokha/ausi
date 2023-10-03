@@ -39,11 +39,13 @@ class Footer extends Component {
     return (
       <div>
         {/*====================  footer area ====================*/}
-        <div className="footer-area dark-bg">
+        <div className="footer-area dark-bg"
+          style={{ paddingTop: '50px', paddingBottom: '10px' }}
+        >
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
-                <div className="footer-content-wrapper section-space--inner--100">
+                <div className="footer-content-wrapper ">
                   <div className="row">
                     <div className="col-xl-3 col-lg-3 col-md-12">
                       {/* footer intro wrapper */}
@@ -67,21 +69,24 @@ class Footer extends Component {
                     <div className="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
                       {/* footer widget */}
                       <div className="footer-widget">
-                        <h4 className="footer-widget__title">USEFUL LINKS</h4>
+                        <h4 className="footer-widget__title"  style={{ marginBottom: "10px" }}>
+                          NAVIGATION</h4>
                         <ul className="footer-widget__navigation">
                           <li>
                             <a href={`${process.env.PUBLIC_URL}/`}>Home</a>
                           </li>
                           <li>
-                            <a href={`${process.env.PUBLIC_URL}/`}>
-                              Company News
+                            <a href={`${process.env.PUBLIC_URL}/assay`}>
+                              Assay
                             </a>
                           </li>
                           <li>
-                            <a href={`${process.env.PUBLIC_URL}/`}>Projects</a>
+                            <a href={`${process.env.PUBLIC_URL}/about_us`}>
+                              About Us
+                            </a>
                           </li>
                           <li>
-                            <a href={`${process.env.PUBLIC_URL}/`}>Careers</a>
+                            <a href={`${process.env.PUBLIC_URL}/refinaring`}>Refinery</a>
                           </li>
                           <li>
                             <a href={`${process.env.PUBLIC_URL}/`}>
@@ -94,49 +99,36 @@ class Footer extends Component {
                     <div className="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
                       {/* footer widget */}
                       <div className="footer-widget">
-                        <h4 className="footer-widget__title">USEFUL LINKS</h4>
-                        <ul className="footer-widget__navigation">
-                          <li>
-                            <a href={`${process.env.PUBLIC_URL}/`}>
-                              Our Services
-                            </a>
-                          </li>
-                          <li>
-                            <a href={`${process.env.PUBLIC_URL}/`}>Showcase</a>
-                          </li>
-                          <li>
-                            <a href={`${process.env.PUBLIC_URL}/`}>Affliates</a>
-                          </li>
-                          <li>
-                            <a href={`${process.env.PUBLIC_URL}/`}>
-                              Disclaimer
-                            </a>
-                          </li>
-                          <li>
-                            <a href={`${process.env.PUBLIC_URL}/`}>
-                              Privacy Policy
-                            </a>
-                          </li>
-                        </ul>
+                        <h4 className="footer-widget__title" style={{ marginBottom: "10px" }}>GET IN TOUCH</h4>
+                        <h4 style={{ color: "white", textAlign: 'left' }}>You can get an Assay report with Us </h4>
+                        <div className="border-gold full" >
+
+                          <div className="button center" style={{ width: '100%' }}>
+                            <a
+                              href={`${process.env.PUBLIC_URL}/contact-us`}
+                              className="see-more-link"
+                            >Contact Us</a> </div>
+                        </div>
+
                       </div>
                     </div>
                     <div className="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
                       {/* footer widget */}
                       <div className="footer-widget mb-0">
-                        <h4 className="footer-widget__title">CONTACT US</h4>
+                        <h4 className="footer-widget__title" style={{ marginBottom: "10px" }}>CONTACT US</h4>
                         <div className="footer-widget__content">
                           <p className="address">
-                            Your address goes here, street Crossroad123.
+                            2nd Parklands Avenue,
                           </p>
                           <ul className="contact-details">
                             <li>
-                              <span>P:</span>99 55 66 88 526
+                              <span>P:</span>+254 788 283 594
                             </li>
                             <li>
                               <span>F:</span>55 44 77 62
                             </li>
                             <li>
-                              <span>E:</span>cons@email.com
+                              <span>E:</span>info@aussiemint.com
                             </li>
                           </ul>
                         </div>
@@ -150,8 +142,7 @@ class Footer extends Component {
           <div className="footer-copyright-wrapper">
             <div className="footer-copyright text-center">
               <p className="copyright-text">
-                &copy; Castro {new Date().getFullYear()} Made With <i className="fa fa-heart"></i> By
-                HasThemes
+                &copy; Aussiemint {new Date().getFullYear()}
               </p>
             </div>
           </div>
@@ -159,14 +150,17 @@ class Footer extends Component {
         {/*====================  End of footer area  ====================*/}
         {/*====================  scroll top ====================*/}
         <button
-          className="scroll-top"
+          className="scroll-top center"
           id="scroll-top"
           onClick={this.scrollToTop}
+          style={{ backgroundColor: "transparent" }}
         >
-          <i className="ion-android-arrow-up" />
-        </button>
+          {/* <i className="ion-android-arrow-up" /> */}
+          <a href="https://api.whatsapp.com/send?phone=0788283594" target='_blank'><img src="assets/assets/whatsap.png" height="100%" width="100%" alt="" />
+          </a> </button>
+
         {/*====================  End of scroll top  ====================*/}
-      </div>
+      </div >
     );
   }
 }

@@ -48,10 +48,12 @@ class Funfact extends Component {
         <div
           className="funfact-section section-space--inner--100 funfact-bg"
           style={{
-            backgroundImage: `url(assets/assets/refinaries/globe.jpg)`
+            backgroundImage: `url(assets/assets/refinaries/globe.jpg)`,
+            paddingTop: '50px' ,paddingBottom: '50px' 
           }}
+          // style={{ }}
         >
-          <div className="container">
+          <div className="container" >
             <div className="row">
               <div className="col-lg-12">
                 <div className="fun-fact-wrapper">
@@ -60,12 +62,12 @@ class Funfact extends Component {
               </div>
             </div>
           </div>
-          <div className="container" style={{ color: "white", paddingTop: '140px', fontSize: "16px" }}>
-            <p> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Network Coverage (Africa & the World):</span>As a global player in the precious metals refining industry, Aussiemint has established an extensive network that spans not only across Africa but also around the world. </p>
-            <p>Our reach allows us to serve clients from various corners of the globe, facilitating secure and efficient transactions</p>
-            <p> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Internationally:</span> Our global network extends beyond Africa to encompass major international hubs. </p>
-            <p>We collaborate with refineries, distributors, and traders worldwide, ensuring that our clients can access a broad spectrum of markets and opportunities.</p>
-            <p>This international presence allows us to </p>
+          <div className="container" style={{ color: "white", paddingTop: '40px', fontSize: "16px", textAlign: 'center' }}>
+            <p> <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Network Coverage (Africa & the World):</span>As a global player in the precious metals refining industry, Aussiemint has established an extensive network that spans not only across Africa but also around the world.
+              <span> Our reach allows us to serve clients from various corners of the globe, facilitating secure and efficient transactions</span>
+              <span>  <span className="font-bold text-gold" style={{ color: "#d2ac67", fontWeight: 'bold' }}>Internationally:</span> Our global network extends beyond Africa to encompass major international hubs. </span>
+              <span> We collaborate with refineries, distributors, and traders worldwide, ensuring that our clients can access a broad spectrum of markets and opportunities.</span>
+              <span> This international presence allows us to </span></p>
           </div>
         </div>
 
