@@ -22,7 +22,7 @@ class VideoCta extends Component {
                     style={{ paddingTop: '20px', paddingBottom: '50px' }}>
                     <div className="container">
                         <div className="row align-items-center">
-                            <h3 style={{ textAlign: 'center', paddingBottom: '20px', color: 'gray' }}>Aussiemint - a leading Refinary in Africa</h3>
+                            <h3 style={{ textAlign: 'center', paddingBottom: '20px', color: 'gray' }}>Aussiemint - a leading Refinery in Africa</h3>
                             <div className="col-lg-6 col-md-6">
                                 <div className="video-cta-content">
 

@@ -2,6 +2,17 @@ import axios from "axios";
 // import { getData } from "../../src/services/asyncStorage.service";
 
 const axiosService = axios.create({
+    // baseURL: `https://www.goldapi.io/api/XAU/USD`,
+
+
+    baseURL: "https://marapesa.com/api/",
+    timeout: 20000,
+    headers: {
+        "Content-Type": "application/json",
+        "x-access-token": "goldapi-1pgf6rlmylsbqq-io",
+    },
+});
+export const base_axios = axios.create({
     baseURL: `https://www.goldapi.io/api/XAU/USD`,
 
 

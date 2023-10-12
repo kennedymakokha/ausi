@@ -1,12 +1,5 @@
-import React, { Component, useEffect, useState } from "react";
-import { animateScroll as scroll } from "react-scroll";
+import React, { useEffect, useState } from "react";
 
-import Gold from './../assets/assets/images/gold.png'
-import gram from './/../assets/assets/images/gram.png'
-import kilo from './/../assets/assets/images/h-gold-kg.png'
-import tola from './/../assets/assets/images/h-gold-tola.png'
-import silver from './/../assets/assets/images/silver_ounce.png'
-import arrowDown from './/../assets/assets/images/arrow1.png'
 const style = {
     container: {
         display: "flex", justifyItems: "center", justifycontent: "center",
@@ -79,7 +72,9 @@ const Prices = (props) => {
 
                 setPrices(JSON.parse(result))
             })
-            .catch(error => console.log('error', error));
+            .catch(
+            // error => console.log('error', error)
+        );
 
         // update the state
         // setStatus(response.success)
@@ -138,7 +133,10 @@ export const PriceSmall = (props) => {
 
                 setPrices(JSON.parse(result))
             })
-            .catch(error => console.log('error', error));
+            .catch(
+            // error =>
+            //  console.log('error', error)
+        );
 
         // update the state
         // setStatus(response.success)

@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import store from './redux/store'
 import { Provider } from 'react-redux'
+import Subscribers from "./pages/Subscribers";
 const HomeOne = lazy(() => import("./home/HomeOne"));
 const HomeTwo = lazy(() => import("./home/HomeTwo"));
 const HomeThree = lazy(() => import("./home/HomeThree"));
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/assay" element={<Assays />} />
             <Route path="/service-details-left-sidebar" element={<ServiceDetailsLeftSidebar />} />
             <Route path="/service-details-right-sidebar" element={<ServiceDetailsRightSidebar />} />
+            <Route path="/admin/subscribers" element={<Subscribers />} />
             <Route path="/refinery" element={<Projects />} />
             <Route path="/project-details" element={<ProjectDetails />} />
             <Route path="/blog-left-sidebar" element={<BlogLeftSidebar />} />
