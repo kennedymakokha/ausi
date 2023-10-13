@@ -4,8 +4,8 @@ import axios from "axios";
 const axiosService = axios.create({
     // baseURL: `https://www.goldapi.io/api/XAU/USD`,
 
-
-    baseURL: "https://marapesa.com/api/",
+    baseURL: "http://localhost:4000/api",
+    // baseURL: "https://marapesa.com/api/",
     timeout: 20000,
     headers: {
         "Content-Type": "application/json",

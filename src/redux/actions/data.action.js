@@ -11,7 +11,7 @@ export const getApiData = () => async (dispatch) => {
         dispatch({ type: "FETCH_DATA_SUCCESSFUL", payload });
         return payload;
     } catch (error) {
-      //  console.log("ERROR", error)
+        //  console.log("ERROR", error)
         let payload = "error.response.data.message";
         // const { response: { data: { message } } } = error
         dispatch({ type: "FETCH_DATA_FAIL", });
@@ -32,7 +32,21 @@ export const contactFormAction = (data) => async (dispatch) => {
         dispatch({ type: "POST_CONTACT_SUCCESSFUL", });
         return;
     } catch (error) {
-      //  console.log(error)
+        //  console.log(error)
+        throw error.response.data;
+    }
+};
+export const dispatchMails = (data) => async (dispatch) => {
+    try {
+
+
+        dispatch({ type: "POST_CONTACT" });
+        const resposnse = await axios.post(`/dispatch-newslaters`, data);
+
+        dispatch({ type: "POST_CONTACT_SUCCESSFUL", });
+        return;
+    } catch (error) {
+        console.log(error)
         throw error.response.data;
     }
 };
@@ -43,7 +57,7 @@ export const AddSubScriberAction = (data) => async (dispatch) => {
         data.to_mail = "lab@aussie-mint.com"
         data.company = 'Aussie-mint Gold Refinery'
         data.phone = ""
-      //  console.log(data)
+        //  console.log(data)
         dispatch({ type: "POST_CONTACT" });
         const resposnse = await axios.post(`/add-subscriber`, data);
 
@@ -66,7 +80,7 @@ export const FetchSubScriberAction = (data) => async (dispatch) => {
         dispatch({ type: "FETCH_SUBSCRIBERS_SUCCESSFUL", payload });
         return payload;
     } catch (error) {
-       
+
         let payload = "error.response.data.message";
         // const { response: { data: { message } } } = error
         dispatch({ type: "FETCH_SUBSCRIBERS_FAIL", });
