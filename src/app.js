@@ -2,7 +2,9 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import store from './redux/store'
 import { Provider } from 'react-redux'
-import Subscribers from "./pages/Subscribers";
+import Subscribers from "./pages/admin/Subscribers";
+import Login from "./pages/admin/login";
+import Admin from "./pages/admin";
 const HomeOne = lazy(() => import("./home/HomeOne"));
 const HomeTwo = lazy(() => import("./home/HomeTwo"));
 const HomeThree = lazy(() => import("./home/HomeThree"));
@@ -37,6 +39,8 @@ const App = () => {
             <Route path="/service-details-left-sidebar" element={<ServiceDetailsLeftSidebar />} />
             <Route path="/service-details-right-sidebar" element={<ServiceDetailsRightSidebar />} />
             <Route path="/admin/subscribers" element={<Subscribers />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/login" element={<Login />} />
             <Route path="/refinery" element={<Projects />} />
             <Route path="/project-details" element={<ProjectDetails />} />
             <Route path="/blog-left-sidebar" element={<BlogLeftSidebar />} />

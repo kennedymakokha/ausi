@@ -1,10 +1,11 @@
 import React, { Component, useEffect, useState } from "react";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import MobileMenu from "../components/MobileMenu";
-import { FetchSubScriberAction, dispatchMails } from '../redux/actions/data.action'
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
+import MobileMenu from "../../components/MobileMenu";
+import { FetchSubScriberAction, dispatchMails } from '../../redux/actions/data.action'
 import { connect } from 'react-redux'
-import Modal from "./modals";
+import Modal from "../modals";
+import AdminNavBar from "../../components/AdminNavBar";
 function Subscribers(props) {
 
 
@@ -52,7 +53,7 @@ function Subscribers(props) {
   return (
     <div>
       {/* Navigation bar */}
-      <NavBar />
+      <AdminNavBar />
       {isOpen && <Modal setIsOpen={setIsOpen} submit={submit} mailobj={mailobj} setMailObject={setMailObject} />}
       <div className="page-wrapper section-space--inner--120">
         {/*Contact section start*/}
