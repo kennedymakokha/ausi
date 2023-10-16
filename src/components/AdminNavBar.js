@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
 import Prices, { PriceSmall } from './prices';
-
+import './menustyle.css'
 
 class AdminNavBar extends Component {
 
@@ -28,6 +28,7 @@ class AdminNavBar extends Component {
     }
 
     componentDidMount() {
+
         this.mount = true;
         const el = document.querySelector('nav');
         // setInterval(() => {
@@ -100,20 +101,21 @@ class AdminNavBar extends Component {
                                                 <nav>
                                                     <ul>
                                                         <li className="">
+
                                                             <Link to={`${process.env.PUBLIC_URL}/admin`} style={{ textTransform: 'uppercase' }}> Home </Link>
-                                                            {/* <ul className="submenu">
-                                                    <li><Link to={`${process.env.PUBLIC_URL}/home-one`}>Homepage One</Link></li>
-                                                    <li><Link to={`${process.env.PUBLIC_URL}/home-two`}>Homepage Two</Link></li>
-                                                    <li><Link to={`${process.env.PUBLIC_URL}/home-three`}>Homepage Three</Link></li>
-                                                </ul> */}
+
                                                         </li>
                                                         <li className="">
                                                             <Link to={`${process.env.PUBLIC_URL}/admin/subscribers`} style={{ textTransform: 'uppercase' }}> Subscribers </Link>
-                                                            {/* <ul className="submenu">
-                                                    <li><Link to={`${process.env.PUBLIC_URL}/home-one`}>Homepage One</Link></li>
-                                                    <li><Link to={`${process.env.PUBLIC_URL}/home-two`}>Homepage Two</Link></li>
-                                                    <li><Link to={`${process.env.PUBLIC_URL}/home-three`}>Homepage Three</Link></li>
-                                                </ul> */}
+
+                                                        </li>
+                                                        <li className="">
+                                                            <Link to={`${process.env.PUBLIC_URL}/admin/users`} style={{ textTransform: 'uppercase' }}> Users </Link>
+
+                                                        </li>
+                                                        <li className="">
+                                                            <Link to={`${process.env.PUBLIC_URL}/admin/user-feedbacks`} style={{ textTransform: 'uppercase' }}> feed Backs </Link>
+
                                                         </li>
                                                         {/* <li><Link to={`${process.env.PUBLIC_URL}/about-us`}>ABOUT</Link></li> */}
                                                         {/* <li className=""> */}
@@ -146,7 +148,16 @@ class AdminNavBar extends Component {
 
                                                 <div style={{ color: "white", display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '20px', fontWeight: 'bold', color: '#d2ac67' }}>
                                                     {/* <img src="assets/assets/aussie-logo.png" style={{ height: '10px' }} className="img-fluid" alt="Logo" /> */}
-                                                    Admin
+                                                    <div class="dropdown">
+                                                        <button> {this.props?.user?.name}</button>
+                                                        <div class="dropdown-options">
+                                                            {/* <a href="#">Dashboard</a>
+                                                            <a href="#">Setting</a> */}
+                                                            <div onClick={() => { localStorage.clear(); window.location.reload(false); }}>Logout</div>
+                                                        </div>
+                                                    </div>
+
+
                                                 </div>
                                             </div>
                                         </div>

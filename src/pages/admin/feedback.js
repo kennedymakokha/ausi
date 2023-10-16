@@ -2,41 +2,37 @@ import React, { Component, useEffect, useState } from "react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import MobileMenu from "../../components/MobileMenu";
-import { FetchSubScriberAction, dispatchMails } from '../../redux/actions/data.action'
+import { FetchUserFeedback, respondtoFeed, FetchUserFeedsResponce } from '../../redux/actions/data.action'
 import { connect } from 'react-redux'
 import Modal from "../modals";
 import AdminNavBar from "../../components/AdminNavBar";
+import Feedbackmodal from "../modals/feedbackResponse";
 function Subscribers(props) {
 
 
   const [array, setArray] = useState([]);
+  const [feedback, setfeedback] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const [mailobj, setMailObject] = useState({
-    subject: '',
+
     msg: "",
-    name: 'kennedy',
-    list: array,
-    to_mail: "",
+    to_mail: feedback?.email,
+    originalmsg: feedback?._id,
     company: "Aussie-mint Gold Refinery"
   })
-  const modifyProperty = (target) => {
-    const result = array.filter(dat => !dat.includes(target));
-    // console.log(includes(target))
-    if (array.includes(target)) {
-      let i = array.indexOf(target);
-      let newArray = array.splice(i, 1);
-      setArray(newArray)
 
-      return
-    } else {
-      setArray([...array, target])
-    }
-
-  };
   const submit = async () => {
     try {
-      mailobj.list = array
-      await props.dispatchMails(mailobj)
+
+      setMailObject((prevState) => ({
+        ...prevState, to_mail: feedback?.email, originalmsg: feedback?._id,
+      }))
+      let data = mailobj
+      data.to_mail = feedback?.email
+      data.originalmsg = feedback?._id
+
+      await props.respondtoFeed(data)
+      setIsOpen(false)
 
     } catch (error) {
 
@@ -45,11 +41,11 @@ function Subscribers(props) {
 
   useEffect(() => {
 
-    props.FetchSubScriberAction()
+    props.FetchUserFeedback("Aussie-mint Gold Refinery")
     const user = JSON.parse(localStorage.getItem("userInfo"));
-   
+
     if (!user) {
-        window.location.href = "/admin/login"
+      window.location.href = "/admin/login"
     }
 
   }, []);
@@ -58,40 +54,39 @@ function Subscribers(props) {
     <div>
       {/* Navigation bar */}
       <AdminNavBar />
-      {isOpen && <Modal setIsOpen={setIsOpen} submit={submit} mailobj={mailobj} setMailObject={setMailObject} />}
+      {isOpen && <Feedbackmodal setIsOpen={setIsOpen} submit={submit} mailobj={mailobj} feedback={feedback} setMailObject={setMailObject} />}
       <div className="page-wrapper section-space--inner--120">
         {/*Contact section start*/}
         <div className="conact-section">
           <div className="container">
             <div className="row section-space--bottom--50">
               <div className="col">
-                <div style={{
-                  borderRadius: '20px', paddingTop: '10px', paddingBottom: '10px', paddingRight: '20px', paddingLeft: '20px', backgroundColor: 'red',
-                  width: '200px', float: 'right', color: 'white', fontWeight: 'bold', textTransform: 'uppercase', display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center', justifyItems: 'center'
-                }}
-                  onClick={() => setIsOpen(true)}
-                >Dispatch Mail to {array.length}</div>
+
                 <table className="table responsive">
 
                   <thead>
                     <tr>
                       <th>#</th>
+                      <th>Name</th>
                       <th>Email Address</th>
-                      <th>Action</th>
+                      <th>Message</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
-                    {props.subscribers.map((subscriber, i) => (
-                      <tr key={i}>
+                    {props.feedBacks.map((subscriber, i) => (
+                      <tr key={i} onClick={async () => { setIsOpen(true); setfeedback(subscriber); await props.FetchUserFeedsResponce(subscriber._id) }}>
                         <td>{i + 1}</td>
+                        <td>{subscriber.name}</td>
                         <td>{subscriber.email}</td>
+                        <td>{subscriber.msg}</td>
                         <th>
-                          <input
-                            type="checkbox"
-                            // checked={checkboxState}
-                            value="Item 2"
-                            onChange={() => modifyProperty(subscriber.email)}
-                          />
+                          {/* <input
+          type="checkbox"
+          // checked={checkboxState}
+          value="Item 2"
+         
+        /> */}
                         </th>
                       </tr>
                     ))}
@@ -103,7 +98,7 @@ function Subscribers(props) {
           </div>
         </div>
       </div>
-     
+
 
       {/* Mobile Menu */}
       <MobileMenu />
@@ -116,11 +111,11 @@ const mapStateToProps = (state) => {
   return {
 
     loading: state.priceDetails.loading,
-
+    feedBacks: state.priceDetails.feedBacks,
     subscribers: state.priceDetails.subscribers,
 
   };
 };
 
-export default connect(mapStateToProps, { FetchSubScriberAction, dispatchMails })(Subscribers)
+export default connect(mapStateToProps, { FetchUserFeedback, respondtoFeed, FetchUserFeedsResponce })(Subscribers)
 

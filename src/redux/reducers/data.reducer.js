@@ -1,6 +1,7 @@
 const initialState = {
     errors: [],
     subscribers: [],
+    feedBacks: [],
     error: "",
 
     prices: {},
@@ -24,6 +25,23 @@ export default function store(state = initialState, action) {
                 prices: action.payload,
             };
         case "FETCH_DATA_FAIL":
+            return {
+                ...state,
+                loading: true,
+                error: action.payload,
+            };
+        case "FETCH_FEEDBACKS":
+            return {
+                ...state,
+                loading: true,
+            };
+        case "FETCH_FEEDBACKS_SUCCESSFUL":
+            return {
+                ...state,
+                loading: false,
+                feedBacks: action.payload,
+            };
+        case "FETCH_FEEDBACKS_FAIL":
             return {
                 ...state,
                 loading: true,
